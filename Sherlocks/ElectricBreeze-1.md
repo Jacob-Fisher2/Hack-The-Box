@@ -75,3 +75,15 @@ The VirusTotal Detail -> Manifest section:
 > Premain-Class: com.versa.vnms.ui.TestMain
 > 
 
+### Question 12: What is the CVE identifier associated with this malware and vulnerability?
+The VirusTotal Detections tab has the CVE listed under DrWeb and as the object's tag: CVE-2024-39717
+
+### Question 13: According to the [CISA document](https://www.cisa.gov/sites/default/files/2024-03/aa24-038a_csa_prc_state_sponsored_actors_compromise_us_critical_infrastructure_3.pdf) referenced by MITRE, what is the primary strategy Volt Typhoon uses for defense evasion?
+Under the section titled “Defense Evasion”, it says “Volt Typhoon has strong operational security. Their actors primarily use LOTL for defense evasion, which allows them to camouflage their malicious activity with typical system and network behavior, potentially circumventing simplistic endpoint security capabilities.” 
+
+### Question 14: In the CISA document, which file name is associated with the command potentially used to analyze logon patterns by Volt Typhoon?
+“Specifically, in one incident, analysis of the PowerShell console history of a domain
+controller indicated that security event logs were directed to a file named user.dat, as evidenced by the executed command Get-EventLog security -instanceid 4624 -after [year-month-date] | fl * | Out-File ‘C:\users\public\documents\user.dat’.”
+### Answer: C:\users\public\documents\user.dat
+
+
