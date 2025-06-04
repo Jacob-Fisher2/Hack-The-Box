@@ -44,5 +44,17 @@ Installed:
 ### Answer: WinRAR
 
 ### Question 3: They then proceeded to download and execute the portable version of a tool that could be used to search for files on the machine quickly and efficiently. What was the full path of the executable?
-Using the same filter I also see Everything.exe ```{"EventData":{"Data":{"@Name":"Data","#text":"{\"$type\":\"isFileSupported\",\"executionTime\":\"8701\",\"path\":\"C:\\\\Users\\\\Dutch\\\\Downloads\\\\Everything.exe\",\"size\":\"1778192\"}"}}}```. A quick Google tells me Everything.exe is a data exfil tool that searches and indexes faster than Windows built in search; threat actors use this tool to quickly find critical files and documents to exfil.
+Using the same filter I also see Everything.exe:
+```{"EventData":{"Data":{"@Name":"Data","#text":"{\"$type\":\"isFileSupported\",\"executionTime\":\"8701\",\"path\":\"C:\\\\Users\\\\Dutch\\\\Downloads\\\\Everything.exe\",\"size\":\"1778192\"}"}}}``` 
+A quick Google tells me Everything.exe is a data exfil tool that searches and indexes faster than Windows built in search; threat actors use this tool to quickly find critical files and documents to exfil.
 ### Answer: C:\Users\Dutch\Downloads\Everything.exe (after removing extra backslashes from the raw data)
+
+### Question 4: What is the execution time of the tool from task 3?
+### Answer: Timestamp for Everything.exe line is 2025-01-24 10:17:33
+
+### Question 5: The utility was used to search for critical and confidential documents stored on the host, which the attacker could steal and extort the victim. What was the first document that the attacker got their hands on and breached the confidentiality of that document?
+The first document accessed was at 2025-01-24 10:19:00 and it was
+```
+{"EventData":{"Data":{"@Name":"Data","#text":"{\"$type\":\"isFileSupported\",\"executionTime\":\"3720\",\"path\":\"C:\\\\Users\\\\Dutch\\\\Documents\\\\2025- Board of directors Documents\\\\Ministry Of Defense Audit.pdf\",\"size\":\"2679956\"}"}}}
+```
+### Answer: C:\Users\Dutch\Documents\2025- Board of directors Documents\Ministry Of Defense Audit.pdf
