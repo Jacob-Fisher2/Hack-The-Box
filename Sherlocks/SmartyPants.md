@@ -28,3 +28,16 @@ Open the results.csv in Timeline Explorer
 ### Question 1: The attacker logged in to the machine where Dutch saves critical files, via RDP on 24th January 2025. Please determine the timestamp of this login.
 Under Provider filter by RemoteConnectionManager and filter for Event ID: 1149. Result 1 event of "RDP network connection established" by User \Dutch at 2024-01-24 10:15:14
 ### Answer: 2024-01-24 10:15:14
+
+### Question 2: The attacker downloaded a few utilities that aided them for their sabotage and extortion operation. What was the first tool they downloaded and installed?
+Clear previous filters, filter Provider by SmartScreen, search the Payload column for suspicious events after the RDP connection timestamp.
+The first couple processes are related to msedge, the first tool downloaded and installed is WinRAR:
+Downloaded:
+```
+{"EventData":{"Data":{"@Name":"Data","#text":"{\"$type\":\"isFileSupported\",\"executionTime\":\"9281\",\"path\":\"C:\\\\Users\\\\Dutch\\\\Downloads\\\\winrar-x64-701.exe\",\"size\":\"3912088\"}"}}}
+```
+Installed:
+```
+{"EventData":{"Data":{"@Name":"Data","#text":"{\"$type\":\"isFileSupported\",\"executionTime\":\"5045\",\"path\":\"C:\\\\Program Files\\\\WinRAR\\\\WinRAR.exe\",\"size\":\"3289752\"}"}}}
+```
+### Answer: WinRAR
