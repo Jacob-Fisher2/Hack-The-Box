@@ -21,5 +21,10 @@ Forela's CTO, Dutch, stores important files on a separate Windows system because
 ## Walkthrough
 Parse Event logs folder with EvtxEcmd in PowerShell
 ```
-.\EvtxECmd.exe -d "*path to logs*" --csv "*path where to save result csv*" --csvf *filename*.csv
+.\EvtxECmd.exe -d ".\Sherlocks\SmartyPants\Logs" --csv ".\Sherlocks\SmartyPants" --csvf results.csv
 ```
+Open the results.csv in Timeline Explorer
+
+### Question 1: The attacker logged in to the machine where Dutch saves critical files, via RDP on 24th January 2025. Please determine the timestamp of this login.
+Under Provider filter by RemoteConnectionManager and filter for Event ID: 1149. Result 1 event of "RDP network connection established" by User \Dutch at 2024-01-24 10:15:14
+### Answer: 2024-01-24 10:15:14
