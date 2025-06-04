@@ -55,13 +55,23 @@ The [VirusTotal page](https://www.virustotal.com/gui/file/4bcedac20a75e8f8833f47
 ### Question 11: What is the ‘Created by’ value in the file’s Manifest according to VirusTotal?
 The VirusTotal Detail -> Manifest section:
 > Manifest-Version: 1.0
+> 
 > Archiver-Version: Plexus Archiver
+> 
 > Created-By: Apache Maven 3.6.0
+> 
 > Built-By: versa
+> 
 > Build-Jdk: 11.0.19
+> 
 > Agent-Class: com.versa.vnms.ui.TestMain
+> 
 > Can-Redefine-Classes: true
+> 
 > Can-Retransform-Classes: true
+> 
 > Main-Class: com.versa.vnms.ui.TestMain
+> 
 > Premain-Class: com.versa.vnms.ui.TestMain
+> 
 
