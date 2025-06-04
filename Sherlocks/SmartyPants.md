@@ -1,3 +1,6 @@
+
+![tuTPlyfYgh](https://github.com/user-attachments/assets/37f05f5b-01b1-4f97-8107-15533f066bfb)
+
 # About SmartyPants
 
 Players will use SmartScreen debug logs to understand user activities and corporate sabotage. This Sherlock is released alongside a HackTheBox blog post (https://hackthebox.com/blog/smartscreen-logs-evidence-execution) to highlight how this log, which was discovered by HackTheBox content engineers during their research, can serve as a crucial artefact in incident investigations. 
