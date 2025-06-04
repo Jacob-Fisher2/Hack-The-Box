@@ -18,4 +18,8 @@ Forela's CTO, Dutch, stores important files on a separate Windows system because
 ## Tools Used
 [Eric Zimmerman's](https://ericzimmerman.github.io/#!index.md) EvtxEcmd and Timeline Explorer 
 
-
+## Walkthrough
+Parse Event logs folder with EvtxEcmd in PowerShell
+```
+.\EvtxECmd.exe -d "*path to logs*" --csv "*path where to save result csv*" --csvf *filename*.csv
+```
