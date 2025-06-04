@@ -32,6 +32,7 @@ Under Provider filter by RemoteConnectionManager and filter for Event ID: 1149. 
 ### Question 2: The attacker downloaded a few utilities that aided them for their sabotage and extortion operation. What was the first tool they downloaded and installed?
 Clear previous filters, filter Provider by SmartScreen, search the Payload column for suspicious events after the RDP connection timestamp.
 The first couple processes are related to msedge, the first tool downloaded and installed is WinRAR:
+
 Downloaded:
 ```
 {"EventData":{"Data":{"@Name":"Data","#text":"{\"$type\":\"isFileSupported\",\"executionTime\":\"9281\",\"path\":\"C:\\\\Users\\\\Dutch\\\\Downloads\\\\winrar-x64-701.exe\",\"size\":\"3912088\"}"}}}
@@ -41,3 +42,7 @@ Installed:
 {"EventData":{"Data":{"@Name":"Data","#text":"{\"$type\":\"isFileSupported\",\"executionTime\":\"5045\",\"path\":\"C:\\\\Program Files\\\\WinRAR\\\\WinRAR.exe\",\"size\":\"3289752\"}"}}}
 ```
 ### Answer: WinRAR
+
+### Question 3: They then proceeded to download and execute the portable version of a tool that could be used to search for files on the machine quickly and efficiently. What was the full path of the executable?
+Using the same filter I also see Everything.exe ```{"EventData":{"Data":{"@Name":"Data","#text":"{\"$type\":\"isFileSupported\",\"executionTime\":\"8701\",\"path\":\"C:\\\\Users\\\\Dutch\\\\Downloads\\\\Everything.exe\",\"size\":\"1778192\"}"}}}```. A quick Google tells me Everything.exe is a data exfil tool that searches and indexes faster than Windows built in search; threat actors use this tool to quickly find critical files and documents to exfil.
+### Answer: C:\Users\Dutch\Downloads\Everything.exe (after removing extra backslashes from the raw data)
