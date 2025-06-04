@@ -29,6 +29,7 @@ Open the results.csv in Timeline Explorer
 Under Provider filter by RemoteConnectionManager and filter for Event ID: 1149. Result 1 event of "RDP network connection established" by User \Dutch at 2024-01-24 10:15:14
 ### Answer: 2024-01-24 10:15:14
 
+
 ### Question 2: The attacker downloaded a few utilities that aided them for their sabotage and extortion operation. What was the first tool they downloaded and installed?
 Clear previous filters, filter Provider by SmartScreen, search the Payload column for suspicious events after the RDP connection timestamp.
 The first couple processes are related to msedge, the first tool downloaded and installed is WinRAR:
@@ -43,6 +44,7 @@ Installed:
 ```
 ### Answer: WinRAR
 
+
 ### Question 3: They then proceeded to download and execute the portable version of a tool that could be used to search for files on the machine quickly and efficiently. What was the full path of the executable?
 Using the same filter I also see Everything.exe:
 ```{"EventData":{"Data":{"@Name":"Data","#text":"{\"$type\":\"isFileSupported\",\"executionTime\":\"8701\",\"path\":\"C:\\\\Users\\\\Dutch\\\\Downloads\\\\Everything.exe\",\"size\":\"1778192\"}"}}}``` 
@@ -51,6 +53,7 @@ A quick Google tells me Everything.exe is a data exfil tool that searches and in
 
 ### Question 4: What is the execution time of the tool from task 3?
 ### Answer: Timestamp for Everything.exe line is 2025-01-24 10:17:33
+
 
 ### Question 5: The utility was used to search for critical and confidential documents stored on the host, which the attacker could steal and extort the victim. What was the first document that the attacker got their hands on and breached the confidentiality of that document?
 The first document accessed was at 2025-01-24 10:19:00 and it was
