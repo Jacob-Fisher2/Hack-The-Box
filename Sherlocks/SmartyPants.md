@@ -61,3 +61,41 @@ The first document accessed was at 2025-01-24 10:19:00 and it was
 {"EventData":{"Data":{"@Name":"Data","#text":"{\"$type\":\"isFileSupported\",\"executionTime\":\"3720\",\"path\":\"C:\\\\Users\\\\Dutch\\\\Documents\\\\2025- Board of directors Documents\\\\Ministry Of Defense Audit.pdf\",\"size\":\"2679956\"}"}}}
 ```
 ### Answer: C:\Users\Dutch\Documents\2025- Board of directors Documents\Ministry Of Defense Audit.pdf
+
+
+### Question 6: Find the name and path of second stolen document as well?
+The second document was accessed at 2025-01-24 10:19:19 and it was
+```
+{"EventData":{"Data":{"@Name":"Data","#text":"{\"$type\":\"isFileSupported\",\"executionTime\":\"3726\",\"path\":\"C:\\\\Users\\\\Dutch\\\\Documents\\\\2025- Board of directors Documents\\\\2025-BUDGET-ALLOCATION-CONFIDENTIAL.pdf\",\"size\":\"523480\"}"}}}
+```
+### Answer: C:\Users\Dutch\Documents\2025- Board of directors Documents\2025-BUDGET-ALLOCATION-CONFIDENTIAL.pdf
+
+
+### Question 7: The attacker installed a Cloud utility as well to steal and exfiltrate the documents. What is name of the cloud utility?
+1 minute after accessing the documents, a file called MegaSyncSetup64.exe was executed:
+```
+{"EventData":{"Data":{"@Name":"Data","#text":"{\"$type\":\"isFileSupported\",\"executionTime\":\"3675\",\"path\":\"C:\\\\Users\\\\Dutch\\\\AppData\\\\Local\\\\MEGAsync\\\\MEGAsync.exe\",\"size\":\"77568264\"}"}}}
+```
+A quick google search shows that this is a cloud utility.
+### Answer: MEGAsync
+
+
+### Question 8: When was this utility executed?
+### Answer: 2025-01-24 10:22:19
+
+### Question 9:The Attacker also proceeded to destroy the data on the host so it is unrecoverable. What utility was used to achieve this?
+Further down the timeline I find:
+```
+{"EventData":{"Data":{"@Name":"Data","#text":"{\"$type\":\"isFileSupported\",\"executionTime\":\"7943\",\"path\":\"C:\\\\Users\\\\Dutch\\\\Downloads\\\\file_shredder_setup.exe\",\"size\":\"2317839\"}"}}}
+```
+A quick google search shows that this is a utility to permanently remove data from drives; the tool is also running:
+```
+{"EventData":{"Data":{"@Name":"Data","#text":"{\"$type\":\"isFileSupported\",\"executionTime\":\"5736\",\"path\":\"C:\\\\Program Files\\\\File Shredder\\\\Shredder.exe\",\"size\":\"2454528\"}"}}}
+```
+### Answer: File Shredder
+
+
+### Question 10: The attacker cleared 2 important logs, thinking they covered all their tracks. When was the security log cleared?
+Clear previous filters, filter Channel by Security and Event ID by 1102. 1 result showing the Security Log was cleared.
+### Answer: 2025-01-24 10:28:41
+
