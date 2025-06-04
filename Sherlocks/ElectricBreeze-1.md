@@ -11,6 +11,7 @@ Your security team must always be up-to-date and aware of the threats targeting 
 
 ## Tools Used
 - MITRE ATT&CK knowledgebase
+- VirusTotal
 
 ## Walkthrough
 
