@@ -1,5 +1,6 @@
 
-![iyGGfACI9D](https://github.com/user-attachments/assets/c7ae4dfa-89e8-4c22-83f6-76a1a3c371ad)
+![iyGGfACI9D](https://github.com/user-attachments/assets/98a2c1b2-ef66-4589-9348-5336c6dfe87d)
+
 
 # ElectricBreeze-1
 
