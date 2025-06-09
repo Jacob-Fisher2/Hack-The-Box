@@ -36,4 +36,11 @@ John Grunewald was deleting some old accounting documents when he accidentally d
 ## Walkthrough
 
 ### Task 1:What is the build version of the operating system?
-Check 
+Checked the memory capture for OS version with volatility 3's windows.info plugin.
+```
+python3 ~/volatility3-develop/vol.py -f memory.vmem windows.info
+```
+![ZlZIbY3IHd](https://github.com/user-attachments/assets/2a33638d-5225-4fab-8918-cac492a41e36)
+
+Was stuck on this task the longest until I figured out through trial and error that the answer was Major/Minor 15.19041.
+
