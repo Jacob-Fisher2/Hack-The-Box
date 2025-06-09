@@ -1,5 +1,6 @@
 
-![tuTPlyfYgh](https://github.com/user-attachments/assets/37f05f5b-01b1-4f97-8107-15533f066bfb)
+![lzcXlHdk8f](https://github.com/user-attachments/assets/2e5f65ab-29d8-4129-897f-d9ab1b200ec8)
+
 
 # About SmartyPants
 
