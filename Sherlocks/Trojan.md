@@ -10,8 +10,12 @@ John Grunewald was deleting some old accounting documents when he accidentally d
 ```bash
   └── Trojan
       ├── disk artifacts
+            └── disk_artifacts.ad1
       ├── memory capture
+            ├── memory.vmem
+            └── memory.vmsn
       └── packet capture
+            └── network.pcapng
   
 ```
 
