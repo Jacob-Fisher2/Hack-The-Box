@@ -30,16 +30,23 @@ Using the same "Get-WmiObject" as in task 1, look for temperature or thermal. FO
 
 
 ### Task 3: The attacker loaded a PowerShell script to detect virtualization. What is the function name of the script?
-Filtering the event logs in 'Windows-PowerShell-Operational' to show all entries with Event ID 4104 (event ID of Creating Scriptblock text) finds that the attacker loaded a VM detection script containing "function Check-VM"
+Filtering the event logs in 'Windows-PowerShell-Operational' to show all entries with Event ID 4104 (event ID of Creating Scriptblock text) finds that the attacker loaded a VM detection script containing "function Check-VM".
 
 
 ### Task 4: Which registry key did the above script query to retrieve service details for virtualization detection?
+Filtering the scriptblock for "HKLM:\SYSTEM" finds the registry key path needed to retrieve service details.
 
 
+## Task 5: The VM detection script can also identify VirtualBox. Which processes is it comparing to determine if the system is running VirtualBox?
+The section of the scriptblock for VirtualBox we can see that the script retrieves process details using the 'Get-Process' cmdlet and compares them with 'vboxservice.exe' and 'vboxtray.exe' to determine whether it's running in a VirtualBox environment.
+
+
+## Task 6: The VM detection script prints any detection with the prefix 'This is a'. Which two virtualization platforms did the script detect?
+Search for the string 'this is a' in the Microsoft-Windows-PowerShell log to find what the script printed was detected.
 
 
 ## Appendix
-Scriptblock
+Scriptblock for task 3-6
 ```powershell 
 Creating Scriptblock text (1 of 1):
 function Check-VM
