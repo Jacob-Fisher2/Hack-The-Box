@@ -67,4 +67,4 @@ To restart a windows machine in Safe Mode, the command must include the string '
 
 
 ### Task 5: Which PowerShell command did the attacker use to disable PowerShell command history logging?
-Searching for 'Set-PSReadlineOption' in the Windows PowerShell logs reveals that the attacker set the History to SaveNothing.
+Searching for 'Set-PSReadlineOption' in the Windows PowerShell logs reveals that the attacker set the HistorySaveStyle to SaveNothing.
