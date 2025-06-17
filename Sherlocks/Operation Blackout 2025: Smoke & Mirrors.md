@@ -61,7 +61,10 @@ public class P {
 }"
 ```
 
+
 ### Task 4: Which command did the attacker use to restart the machine in Safe Mode?
+To restart a windows machine in Safe Mode, the command must include the string 'safeboot', searching the Microsoft-Windows-Sysmon-Operational confirms that the attacker executed "bcdedit.exe /set safeboot network".
 
 
 ### Task 5: Which PowerShell command did the attacker use to disable PowerShell command history logging?
+Searching for 'Set-PSReadlineOption' in the Windows PowerShell logs reveals that the attacker set the History to SaveNothing.
