@@ -27,10 +27,10 @@ Byte Doctor Reyes is investigating a stealthy post-breach attack where several e
 
 ## Walkthrough
 ### Task 1: The attacker disabled LSA protection on the compromised host by modifying a registry key. What is the full path of that registry key?
-
+Filter by "HKLM\SYSTEM" in the Windows PowerShell Operational logs to find were the attacker modified the LSA registry key.
 
 ### Task 2: Which PowerShell command did the attacker first execute to disable Windows Defender?
-
+Look in the Windows PowerShell logs for the PowerShell cmdlet of "[Set-MpPreference](https://learn.microsoft.com/en-us/powershell/module/defender/set-mppreference?view=windowsserver2025-ps)"
 
 ### Task 3: The attacker loaded an AMSI patch written in PowerShell. Which function in the DLL is being patched by the script to effectively disable AMSI?
 
