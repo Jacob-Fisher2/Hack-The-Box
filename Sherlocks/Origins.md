@@ -9,6 +9,12 @@ A major incident has recently occurred at Forela. Approximately 20 GB of data we
 ## Artifacts
 - ftp.pcap - B770184FBC4A68E64D8E28ED9D9CF3E778CA441869736B8B33D13AB69E317C8B
 
+## Skills
+- DFIR
+- Wireshark
+- Log Analysis
+- Attacker Research
+
 
 ## Walkthrough
 
