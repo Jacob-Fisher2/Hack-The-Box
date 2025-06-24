@@ -16,6 +16,10 @@ A major incident has recently occurred at Forela. Approximately 20 GB of data we
 - Attacker Research
 
 
+## Tools Used
+- WireShark
+
+
 ## Walkthrough
 
 
